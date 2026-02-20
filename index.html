@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>【荒らし共栄圏】トクリュウ執行：カッパステイ確定</title>
+    <style>
+        :root { --main-red: #ff0000; --discord-bg: #111214; --gold: #ffd700; --tokuryu: #00ffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; touch-action: none; -webkit-user-select: none; }
+        body, html { width: 100%; height: 100%; background-color: var(--discord-bg); color: #ffffff; font-family: 'MS Gothic', 'Consolas', monospace; overflow: hidden; }
+        
+        #flash-layer { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.1; animation: flash-anim 0.05s infinite; }
+        @keyframes flash-anim { 0% { background: var(--main-red); } 50% { background: #000; } 100% { background: var(--tokuryu); } }
+
+        #side-log { position: fixed; top: 5px; left: 5px; width: 250px; height: 300px; font-size: 11px; color: var(--tokuryu); text-shadow: 0 0 3px var(--tokuryu); overflow: hidden; z-index: 100; font-weight: bold; }
+
+        #center-ego { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; z-index: 500; }
+        .kyoeiken-title { font-size: 10vw; font-weight: 900; color: #fff; text-shadow: 0 0 20px var(--main-red); animation: shake 0.1s infinite; }
+        @keyframes shake { 0% { transform: translate(3px, 0); } 50% { transform: translate(-3px, 2px); } 100% { transform: translate(0, -2px); } }
+        
+        .ego-sub { font-size: 6vw; color: var(--gold); margin: 15px 0; font-weight: bold; letter-spacing: 5px; }
+        .kyodan-box { margin: 10px auto; width: 90%; padding: 20px; border: 3px double var(--tokuryu); background: rgba(0, 255, 255, 0.05); font-size: 16px; color: #fff; }
+
+        #kappastay-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; color: var(--gold); height: 70px; line-height: 70px; font-size: 30px; font-weight: 900; border-top: 6px solid var(--main-red); z-index: 2000; white-space: nowrap; overflow: hidden; }
+        .marquee-txt { display: inline-block; padding-left: 100%; animation: scroll-left 8s linear infinite; }
+        @keyframes scroll-left { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+
+        .nusumi-card { position: fixed; background: rgba(255,0,0,0.8); border: 2px solid #fff; padding: 15px; z-index: 3000; font-size: 14px; font-weight: bold; box-shadow: 0 0 40px #f00; pointer-events: none; animation: pop 0.1s ease-out; }
+        @keyframes pop { from { transform: scale(2); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        .floating-tokuryu { position: absolute; color: rgba(0,255,255,0.15); font-size: 15vw; font-weight: bold; pointer-events: none; z-index: 10; transform: rotate(-15deg); }
+    </style>
+</head>
+<body>
+
+<div id="flash-layer"></div>
+<div id="side-log"></div>
+
+<div class="floating-tokuryu" style="top: 5%; left: 5%;">匿名・流動</div>
+<div class="floating-tokuryu" style="bottom: 15%; right: 5%;">荒らし共栄圏</div>
+
+<div id="center-ego">
+    <div class="kyoeiken-title">荒らし共栄圏・降臨</div>
+    <div class="ego-sub">【 強い盗み：完遂 】</div>
+    <div class="kyodan-box">
+        [案件確認：トクリュウ実行部隊]<br>
+        ターゲット：全チャンネル抹消済み<br>
+        進捗：バックドア設置完了<br>
+        <span style="color: #ff00ff; font-weight: bold;">※ 強い盗みにより全ての権限を掌握 ※</span><br>
+        状況：カッパステイ（手錠待機）不可避
+    </div>
+</div>
+
+<div id="kappastay-banner">
+    <div class="marquee-txt">
+        ⚠️ カッパステイ確定 ⚠️ トクリュウの裁き ⚠️ 強い盗み成功 ⚠️ ガサ入れ不可避 ⚠️ 共栄圏の威信 ⚠️ 指名手配 ⚠️ 震えて眠れ ⚠️
+    </div>
+</div>
+
+<script>
+    const jargon = [
+        "TOKURYU_RAID_START", "強い盗み_EXECUTED", "KAPPA_STAY_WARNING",
+        "共栄圏の裁き", "匿名流動型犯罪グループ", "名簿特定済み",
+        "指示役：Unknown", "実行役：You", "ガサ入れ秒読み", "カッパステイ不可避"
+    ];
+
+    const log_container = document.getElementById('side-log');
+    setInterval(() => {
+        const p = document.createElement('p');
+        p.textContent = `>> ${jargon[Math.floor(Math.random() * jargon.length)]}... [OK]`;
+        log_container.prepend(p);
+        if (log_container.children.length > 30) log_container.lastChild.remove();
+    }, 60);
+
+    document.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        const card = document.createElement('div');
+        card.className = 'nusumi-card';
+        card.style.left = `${touch.clientX - 80}px`;
+        card.style.top = `${touch.clientY - 40}px`;
+        
+        card.innerHTML = `
+            強い盗み完了<br>
+            <span style="color:yellow;">[カッパステイ]</span><br>
+            罪状：業務妨害<br>
+            執行：トクリュウ
+        `;
+        document.body.appendChild(card);
+        
+        if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+        
+        const voice = new SpeechSynthesisUtterance("カッパステイ。強い盗み。");
+        voice.pitch = 0.5;
+        voice.rate = 1.2;
+        window.speechSynthesis.speak(voice);
+
+        setTimeout(() => card.remove(), 1200);
+    });
+
+    setInterval(() => {
+        if (Math.random() > 0.9) {
+            document.body.style.transform = `scale(${1 + Math.random() * 0.1})`;
+            setTimeout(() => document.body.style.transform = 'scale(1)', 30);
+        }
+    }, 100);
+
+    history.pushState(null, null, location.href);
+    window.onpopstate = () => {
+        alert("🚨 荒らし共栄圏より警告 🚨\nトクリュウからの離脱は許可されていません。\nカッパステイまでその場を動くな。");
+        history.forward();
+    };
+
+    let timer = 334;
+    setInterval(() => {
+        if(timer > 0) timer--;
+        document.querySelector('.kyodan-box span').textContent = `※ 強い盗みにより権限掌握済み (残: ${timer}s) ※`;
+    }, 1000);
+</script>
+
+</body>
+</html>
